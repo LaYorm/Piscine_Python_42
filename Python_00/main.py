@@ -65,7 +65,7 @@ def test_ft_exercise(exercise_file_name):
             ft_function("lettuce", 12, "area")
             # Test with unknown unit
             print("\nTesting with unknown unit:")
-            ft_function("basil", 5, "unknown")
+            ft_function("lettuce", 5, "unknown")
         else:
             # Run your function normally (no parameters)
             ft_function()
