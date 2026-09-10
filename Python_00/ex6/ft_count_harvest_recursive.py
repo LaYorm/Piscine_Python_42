@@ -5,6 +5,6 @@ def ft_count_harvest_recursive() -> None:
         if start > days:
             print("Harvest time!")
             return
-        print("Day:", start)
+        print(f"Day: {start}")
         recursive(start + 1, days)
     recursive(1, days)
