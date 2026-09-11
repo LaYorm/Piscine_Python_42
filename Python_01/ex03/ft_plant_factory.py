@@ -3,18 +3,18 @@ class Plant:
                  age: int = 0, grow_speed: float = 0) -> None:
         self.name = name
         self.height = height
-        self._age = age
+        self.p_age = age
         self.height_ini = height
         self.grow_speed = grow_speed
 
     def show(self) -> None:
-        print(f"{self.name}: {self.height:.1f}cm, {self._age} days old")
+        print(f"{self.name}: {self.height:.1f}cm, {self.p_age} days old")
 
     def grow(self) -> None:
         self.height += self.grow_speed
 
     def age(self) -> None:
-        self._age += 1
+        self.p_age += 1
 
     def total_grow(self) -> None:
         total_growth = self.height - self.height_ini
