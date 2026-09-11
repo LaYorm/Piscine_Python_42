@@ -1,12 +1,18 @@
 class Plant:
-    def __init__(self, name: str = "Unknown", height: float = 0,
+    def __init__(self, name: str = "Unknown", height: float = 0.0,
                  age: int = 0) -> None:
         self.name = name
         self.__height = 0.0
         self.__age = 0
 
-        self.set_height(height)
-        self.set_age(age)
+        if age < 0:
+            print(f"{name}: Error, age can't be negative")
+        elif height < 0:
+            print(f"{name}: Error, height can't be negative")
+        else:
+            self.__height = height
+            self.__age = age
+            print(f"Plant created: {name}: {height:.1f}cm, {age} days old")
 
     def get_height(self) -> float:
         return self.__height
@@ -40,17 +46,14 @@ class Plant:
             f"{self.name}: {self.__height:.1f}cm, {self.__age} days old"
         )
 
-    def grow(self) -> None:
-        self.__height += self.__grow_speed
-
     def age(self) -> None:
         self.__age += 1
 
 
 def ft_plant_types() -> None:
     garden = [
-        Plant("Rose", 20.6, 75, 0.8),
-        Plant("Bamboo", 1, 1, 89)
+        Plant("Rose", 20.6, 75),
+        Plant("Bamboo", 1, 1)
     ]
     print("\n=== Garden Security System ===")
     for plant in garden:
@@ -60,7 +63,6 @@ def ft_plant_types() -> None:
     print()
     garden[0].set_height(10.3)
     garden[1].set_age(12)
-    garden[1].grow()
     print()
     for plant in garden:
         plant.show()
