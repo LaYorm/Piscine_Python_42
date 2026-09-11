@@ -2,23 +2,23 @@ class Plant:
     def __init__(self, name: str = "Unknown", height: float = 0.0,
                  age: int = 0) -> None:
         self.name = name
-        self.__height = 0.0
-        self.__age = 0
+        self._height = 0.0
+        self._age = 0
 
         if age < 0:
             print(f"{name}: Error, age can't be negative")
         elif height < 0:
             print(f"{name}: Error, height can't be negative")
         else:
-            self.__height = height
-            self.__age = age
+            self._height = height
+            self._age = age
             print(f"Plant created: {name}: {height:.1f}cm, {age} days old")
 
     def get_height(self) -> float:
-        return self.__height
+        return self._height
 
     def get_age(self) -> int:
-        return self.__age
+        return self._age
 
     def set_height(self, new_h: float) -> None:
         if new_h < 0:
@@ -27,7 +27,7 @@ class Plant:
                 "Height update rejected"
             )
         else:
-            self.__height = new_h
+            self._height = new_h
             print(f"Height updated: {new_h}cm")
 
     def set_age(self, new_a: int) -> None:
@@ -37,17 +37,17 @@ class Plant:
                 "Age update rejected"
             )
         else:
-            self.__age = new_a
+            self._age = new_a
             print(f"Age updated: {new_a} days")
 
     def show(self) -> None:
         print(
             "Current state: "
-            f"{self.name}: {self.__height:.1f}cm, {self.__age} days old"
+            f"{self.name}: {self._height:.1f}cm, {self._age} days old"
         )
 
     def age(self) -> None:
-        self.__age += 1
+        self._age += 1
 
 
 def ft_plant_types() -> None:
